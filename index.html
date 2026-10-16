@@ -106,6 +106,7 @@ h2{font-family:var(--display);font-size:clamp(24px,3.2vw,34px);margin:0 0 6px;le
 
 .contact{border-top:1px solid var(--line);padding-block:32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 .contact .links{display:flex;gap:10px;flex-wrap:wrap}
+.contact button.btn{font:inherit;font-weight:600;cursor:pointer}
 footer{font-size:13px;color:var(--mute);padding-top:20px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.hero>*,.mark::after,.ticker div{animation:none!important;opacity:1;transform:none}.mark::after{transform:scaleX(1)}#grid{display:none}.proj,.shot,.svc,.btn,.more a{transition:none!important}}
@@ -270,7 +271,11 @@ footer{font-size:13px;color:var(--mute);padding-top:20px}
 
   <section class="contact" id="contact">
     <div><h2 style="margin:0 0 6px">Let's talk</h2><span style="color:var(--mute)">Toronto, ON · remote or hybrid · email preferred</span></div>
-    <div class="links"><a class="btn" href="mailto:EMAIL_PLACEHOLDER">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/valentyna-pakhomova" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="links">
+      <a class="btn" href="mailto:valentinapahomova00@gmail.com?subject=Website%20project">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/valentyna-pakhomova" target="_blank" rel="noopener">LinkedIn</a>
+      <button class="btn ghost" type="button" id="copy-email" data-email="valentinapahomova00@gmail.com">valentinapahomova00@gmail.com · copy</button>
+    </div>
   </section>
   <footer>© 2026 Valentyna Pakhomova</footer>
 </div>
@@ -297,6 +302,11 @@ footer{font-size:13px;color:var(--mute);padding-top:20px}
     });
     card.addEventListener('pointerleave',function(){card.style.transform='';});
   });
+
+  /* copy email */
+  var cb=document.getElementById('copy-email');
+  if(cb){cb.addEventListener('click',function(){var e=cb.dataset.email;var done=function(){cb.textContent='Copied: '+e;setTimeout(function(){cb.textContent=e+' \u00b7 copy';},2000);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(e).then(done,function(){window.prompt('Copy the address:',e);});}else{window.prompt('Copy the address:',e);}});}
 
   /* before/after sliders */
   document.querySelectorAll('.cmp input').forEach(function(inp){
