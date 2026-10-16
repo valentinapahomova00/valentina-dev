@@ -65,7 +65,7 @@ h2{font-family:var(--display);font-size:clamp(24px,3.2vw,34px);margin:0 0 6px;le
 .sub{color:var(--mute);margin:0 0 22px;max-width:62ch}
 
 .projects{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.proj{display:grid;gap:12px;min-width:0;transform-style:preserve-3d;transition:transform .35s ease;text-decoration:none;color:inherit}
+.proj{display:grid;gap:12px;min-width:0;align-content:start;grid-template-rows:auto auto auto auto 1fr;transform-style:preserve-3d;transition:transform .35s ease;text-decoration:none;color:inherit}
 .shot{aspect-ratio:16/10;max-width:100%;border-radius:12px;background:var(--card);position:relative;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 20px 40px -24px rgba(0,0,0,.8);padding-top:22px;transition:transform .35s ease,box-shadow .35s ease}
 .shot::before{content:"";position:absolute;left:0;top:0;right:0;height:22px;background:var(--card);border-bottom:1px solid var(--line);z-index:2}
 .shot::after{content:"";position:absolute;left:10px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:14px 0 0 var(--line),28px 0 0 var(--line);z-index:3}
@@ -78,7 +78,7 @@ h2{font-family:var(--display);font-size:clamp(24px,3.2vw,34px);margin:0 0 6px;le
 .proj p{margin:0;color:var(--mute);font-size:15px}
 .role{font-size:13px;color:var(--fg)}
 .role b{color:var(--accent);font-weight:600}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;align-self:start}
 .tag{font-size:12px;padding:3px 9px;border:1px solid var(--line);border-radius:999px;color:var(--mute)}
 
 /* before / after */
