@@ -25,7 +25,13 @@ nav.site b{font-family:var(--display);font-weight:800;letter-spacing:.01em;font-
 nav.site ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;color:var(--mute)}
 nav.site a{text-decoration:none}
 nav.site a:hover{color:var(--fg)}
-@media (max-width:560px){nav.site ul{gap:12px;font-size:13px}}
+nav.site li{white-space:nowrap}
+@media (max-width:700px){
+  nav.site{flex-direction:column;align-items:flex-start;gap:10px;padding-block:12px 10px}
+  nav.site b{white-space:nowrap;font-size:16px}
+  nav.site ul{width:100%;overflow-x:auto;gap:18px;font-size:14px;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.site ul::-webkit-scrollbar{display:none}
+}
 
 .herowrap{position:relative;z-index:0}
 .hero{position:relative;padding-block:64px 36px;display:grid;gap:20px;max-width:800px}
@@ -116,7 +122,7 @@ footer{font-size:13px;color:var(--mute);padding-top:20px}
 </head>
 <body>
 <div class="wrap">
-  <nav class="site" aria-label="Main"><b>Valentyna Pakhomova</b><ul><li><a href="#work">Work</a></li><li><a href="#before-after">Before / after</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+  <nav class="site" aria-label="Main"><b>Valentyna Pakhomova</b><ul><li><a href="#work">Work</a></li><li><a href="#before-after">Before &amp; after</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
 
   <div class="herowrap">
   <canvas id="grid" aria-hidden="true"></canvas>
