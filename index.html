@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valentyna Pakhomova — WordPress & Tilda websites, Toronto</title>
+<meta name="description" content="Valentyna Pakhomova builds and rebuilds websites for small businesses: WordPress, Elementor, Tilda, Figma to site, analytics and automation. Toronto, ON.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap">
+<style>
+/* Night: dark ground, amber accent, screenshots framed as browser windows. */
+:root{
+  --bg:#101418; --fg:#eef1f4; --mute:#97a3ad; --line:#232b33; --card:#171d23; --accent:#f2b341; --accent-ink:#101418;
+  --display:'Syne',system-ui,sans-serif; --body:'DM Sans',system-ui,sans-serif; --radius:10px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto}
+nav.site{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px;border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:env(safe-area-inset-top,0px);background:rgba(16,20,24,.85);backdrop-filter:blur(10px);z-index:5}
+nav.site b{font-family:var(--display);font-weight:800;letter-spacing:.01em;font-size:15px}
+nav.site ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;color:var(--mute)}
+nav.site a{text-decoration:none}
+nav.site a:hover{color:var(--fg)}
+@media (max-width:560px){nav.site ul{gap:12px;font-size:13px}}
+
+.hero{position:relative;z-index:0;padding-block:64px 36px;display:grid;gap:20px;max-width:800px}
+#grid{position:absolute;inset:-40px -16px -20px;z-index:-1;width:calc(100% + 32px);height:calc(100% + 60px);pointer-events:none;max-width:none}
+.eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.6vw,62px);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.02em}
+.mark{position:relative;white-space:nowrap}
+.mark::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.14em;background:var(--accent);border-radius:2px;transform:scaleX(0);transform-origin:left;animation:draw .7s .5s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes draw{to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero>*{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+.hero>*:nth-child(3){animation-delay:.08s}.hero>*:nth-child(4){animation-delay:.16s}.hero>*:nth-child(5){animation-delay:.24s}.hero>*:nth-child(6){animation-delay:.32s}
+.lede{font-size:18px;color:var(--mute);max-width:58ch;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;font-size:15px;transition:transform .2s,box-shadow .2s}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px var(--accent)}
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:8px}
+.stat{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.stat b{display:block;font:800 28px/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--mute)}
+
+.ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:12px;margin-block:8px 28px;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.ticker div{display:flex;gap:40px;width:max-content;animation:scroll 40s linear infinite;font:500 13px var(--body);color:var(--mute);letter-spacing:.04em}
+.ticker span::before{content:"◆";color:var(--accent);margin-right:14px;font-size:9px;vertical-align:middle}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding-block:32px}
+h2{font-family:var(--display);font-size:clamp(24px,3.2vw,34px);margin:0 0 6px;letter-spacing:-.015em;font-weight:800}
+.sub{color:var(--mute);margin:0 0 22px;max-width:62ch}
+
+.projects{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.proj{display:grid;gap:12px;min-width:0;transform-style:preserve-3d;transition:transform .35s ease;text-decoration:none;color:inherit}
+.shot{aspect-ratio:16/10;max-width:100%;border-radius:12px;background:var(--card);position:relative;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 20px 40px -24px rgba(0,0,0,.8);padding-top:22px;transition:transform .35s ease,box-shadow .35s ease}
+.shot::before{content:"";position:absolute;left:0;top:0;right:0;height:22px;background:var(--card);border-bottom:1px solid var(--line);z-index:2}
+.shot::after{content:"";position:absolute;left:10px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:14px 0 0 var(--line),28px 0 0 var(--line);z-index:3}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.shot .sheen{position:absolute;inset:0;z-index:2;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(242,179,65,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.proj:hover .shot{box-shadow:0 0 0 1px var(--accent),0 30px 50px -24px rgba(0,0,0,.9);transform:translateY(-4px)}
+.proj:hover .sheen{opacity:1}
+.proj h3{margin:0;font-size:18px;font-family:var(--display);font-weight:700}
+.proj h3 small{font:500 13px var(--body);color:var(--mute);margin-left:8px}
+.proj p{margin:0;color:var(--mute);font-size:15px}
+.role{font-size:13px;color:var(--fg)}
+.role b{color:var(--accent);font-weight:600}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;padding:3px 9px;border:1px solid var(--line);border-radius:999px;color:var(--mute)}
+
+/* before / after */
+.ba{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.cmp{position:relative;aspect-ratio:16/10;max-width:100%;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--line);background:var(--card);user-select:none;touch-action:none}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.cmp .after{clip-path:inset(0 0 0 var(--cut,50%))}
+.cmp .handle{position:absolute;top:0;bottom:0;left:var(--cut,50%);width:2px;background:var(--accent);transform:translateX(-1px)}
+.cmp .handle::after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--accent);color:var(--accent-ink);font:700 11px var(--body);padding:8px 10px;border-radius:999px;white-space:nowrap;letter-spacing:.1em}
+.cmp .lbl{position:absolute;top:10px;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:rgba(16,20,24,.75);color:var(--fg);z-index:3}
+.cmp .lbl.b{left:10px}.cmp .lbl.a{right:10px;color:var(--accent)}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:4}
+.ba h3{margin:12px 0 4px;font-family:var(--display);font-size:17px}
+.ba p{margin:0;color:var(--mute);font-size:14px}
+
+.more{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.more a{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--card);text-decoration:none;min-width:0;transition:border-color .3s,transform .3s}
+.more a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.more img{width:72px;height:48px;object-fit:cover;object-position:top;border-radius:6px}
+.more b{display:block;font-size:14px;font-family:var(--display)}
+.more span{font-size:12px;color:var(--mute)}
+
+.services{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.svc{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--card);min-width:0;transition:border-color .3s,transform .3s}
+.svc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.svc b{display:block;font-family:var(--display);font-size:15px;margin-bottom:6px}
+.svc span{font-size:14px;color:var(--mute)}
+
+.about{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:start}
+@media (max-width:720px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 12px;max-width:62ch}
+.tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+
+.contact{border-top:1px solid var(--line);padding-block:32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.contact .links{display:flex;gap:10px;flex-wrap:wrap}
+footer{font-size:13px;color:var(--mute);padding-top:20px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.hero>*,.mark::after,.ticker div{animation:none!important;opacity:1;transform:none}.mark::after{transform:scaleX(1)}#grid{display:none}.proj,.shot,.svc,.btn,.more a{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="site" aria-label="Main"><b>Valentyna Pakhomova</b><ul><li><a href="#work">Work</a></li><li><a href="#before-after">Before / after</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+  <header class="hero">
+    <canvas id="grid" aria-hidden="true"></canvas>
+    <div class="eyebrow">WordPress · Elementor · Tilda · Toronto, ON</div>
+    <h1>Websites built, <span class="mark">rebuilt</span> and kept running.</h1>
+    <p class="lede">25+ sites for hotels, clinics and service companies: layout, content, forms, analytics and the fixes after launch. Ten years in digital agencies in Odesa, now based in Toronto.</p>
+    <div class="cta"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+    <div class="stats">
+      <div class="stat"><b data-count="25">0</b><span>sites built</span></div>
+      <div class="stat"><b data-count="10">0</b><span>years in digital agencies</span></div>
+      <div class="stat"><b data-count="7">0</b><span>languages on one site</span></div>
+      <div class="stat"><b data-count="5">0</b><span>years with the longest client</span></div>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true"><div>
+    <span>villa-mafa.com.ua</span><span>aquaparkzatoka.com.ua</span><span>erudit-inclusion.com</span><span>erudit-inclusion.es</span><span>promostar.ua</span><span>performia.com.ua</span><span>stamconsult.co.uk</span><span>hot-chocolate.com.ua</span><span>turin-hotel.com.ua</span><span>aquakoblevo.net</span><span>nightingales.com.ua</span><span>garant-plus-service.com.ua</span><span>erudite-medical.com.ua</span>
+    <span>villa-mafa.com.ua</span><span>aquaparkzatoka.com.ua</span><span>erudit-inclusion.com</span><span>erudit-inclusion.es</span><span>promostar.ua</span><span>performia.com.ua</span><span>stamconsult.co.uk</span><span>hot-chocolate.com.ua</span><span>turin-hotel.com.ua</span><span>aquakoblevo.net</span><span>nightingales.com.ua</span><span>garant-plus-service.com.ua</span><span>erudite-medical.com.ua</span>
+  </div></div>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <p class="sub">Every card says what I did myself. Click a card to open the live site.</p>
+    <div class="projects">
+      <a class="proj" href="https://villa-mafa.com.ua/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/villa-mafa.jpg" alt="villa-mafa.com.ua home page" loading="lazy"></div>
+        <h3>Villa MAFA <small>hotel, Carpathians</small></h3>
+        <p>Purchased theme turned into a custom site: most blocks rebuilt, all pages and content, English version, booking.</p>
+        <div class="role"><b>My part:</b> all pages, visuals, content, WPML, booking integration</div>
+        <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">WPML</span><span class="tag">2026</span></div>
+      </a>
+      <a class="proj" href="https://aquaparkzatoka.com.ua/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/aquaparkzatoka.jpg" alt="aquaparkzatoka.com.ua home page" loading="lazy"></div>
+        <h3>Aquapark Zatoka <small>hotel &amp; water park</small></h3>
+        <p>Redesign of a live site in three languages with a Servio booking widget, GA4 and GTM goals.</p>
+        <div class="role"><b>My part:</b> new design, all pages and blocks in Elementor Pro, content, booking script, analytics; base theme moved by a contract developer</div>
+        <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor Pro</span><span class="tag">Astra</span><span class="tag">UK / RU / EN</span></div>
+      </a>
+      <a class="proj" href="https://erudit-inclusion.com/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/erudit-com.jpg" alt="erudit-inclusion.com home page" loading="lazy"></div>
+        <h3>Erudit <small>child development centres, Ukraine &amp; Spain</small></h3>
+        <p>Two sites for a network of centres, a client for five years: erudit-inclusion.com and the Valencia branch erudit-inclusion.es.</p>
+        <div class="role"><b>My part:</b> layout, all pages in Elementor, Polylang, hosting and domains, GA4 / GTM / Pixel, lead forms to AmoCRM via Make</div>
+        <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor Pro</span><span class="tag">Polylang</span><span class="tag">Make → CRM</span></div>
+      </a>
+      <a class="proj" href="https://promostar.ua/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/promostar.jpg" alt="promostar.ua home page" loading="lazy"></div>
+        <h3>Promostar <small>event agency, Odesa</small></h3>
+        <p>Full redesign in 2026 for a client of five years: artists, hosts and stage equipment for events.</p>
+        <div class="role"><b>My part:</b> my own design, every page, built end-to-end on Tilda</div>
+        <div class="tags"><span class="tag">Tilda</span><span class="tag">Design + build</span><span class="tag">2026</span></div>
+      </a>
+      <a class="proj" href="https://performia.com.ua/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/performia.jpg" alt="performia.com.ua home page" loading="lazy"></div>
+        <h3>Performia <small>HR hiring technology</small></h3>
+        <p>A 50+ page site for an HR-tech company, partly from the client's Figma design, partly my own.</p>
+        <div class="role"><b>My part:</b> all 50+ pages, Figma to Tilda, GTM, GA4, Meta Pixel, Binotel call tracking</div>
+        <div class="tags"><span class="tag">Tilda</span><span class="tag">50+ pages</span><span class="tag">Figma to site</span></div>
+      </a>
+      <a class="proj" href="https://stamconsult.co.uk/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/stamconsult.jpg" alt="stamconsult.co.uk home page" loading="lazy"></div>
+        <h3>STAM Consult <small>B2B consultancy, UK</small></h3>
+        <p>English site with six more language versions, built from a Figma design.</p>
+        <div class="role"><b>My part:</b> Figma to Tilda, all language versions, domains, lead forms</div>
+        <div class="tags"><span class="tag">Tilda</span><span class="tag">7 languages</span><span class="tag">Figma to site</span></div>
+      </a>
+      <a class="proj" href="https://turin-hotel.com.ua/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/turin-hotel.jpg" alt="turin-hotel.com.ua home page" loading="lazy"></div>
+        <h3>Turin Hotel <small>new hotel with a pool, Black Sea coast</small></h3>
+        <p>A brand-new hotel needed a site before its first season: colours, identity and the site itself.</p>
+        <div class="role"><b>My part:</b> design, identity, build, GA4 / GTM</div>
+        <div class="tags"><span class="tag">Tilda</span><span class="tag">Design + build</span><span class="tag">2024</span></div>
+      </a>
+      <a class="proj" href="https://erudite-medical.com.ua/" target="_blank" rel="noopener">
+        <div class="shot"><span class="sheen"></span><img src="img/erudite-medical.jpg" alt="erudite-medical.com.ua home page" loading="lazy"></div>
+        <h3>Erudite Medical <small>rehabilitation centre, Kyiv</small></h3>
+        <p>New adult rehabilitation direction of Erudit, launched in 2026 from a client interview to a live site.</p>
+        <div class="role"><b>My part:</b> design, all pages, content from the client interview, GA4, Meta Pixel</div>
+        <div class="tags"><span class="tag">Tilda</span><span class="tag">Design + build</span><span class="tag">2026</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="before-after">
+    <h2>Before / after</h2>
+    <p class="sub">Drag the handle. "Before" is the previous version of the same site from the Wayback Machine.</p>
+    <div class="ba">
+      <div>
+        <div class="cmp" style="--cut:50%">
+          <img src="img/promostar-before-2025.jpg" alt="promostar.ua in early 2025" loading="lazy">
+          <img class="after" src="img/promostar.jpg" alt="promostar.ua in 2026 after the redesign" loading="lazy">
+          <span class="lbl b">Before</span><span class="lbl a">After · 2026</span>
+          <div class="handle"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after" id="cmp-promostar">
+        </div>
+        <h3>Promostar</h3><p>The old site rebuilt from scratch in 2026: new structure, design and content.</p>
+      </div>
+      <div>
+        <div class="cmp" style="--cut:50%">
+          <img src="img/aquaparkzatoka-before-2023.jpg" alt="aquaparkzatoka.com.ua in 2023" loading="lazy">
+          <img class="after" src="img/aquaparkzatoka.jpg" alt="aquaparkzatoka.com.ua in 2026" loading="lazy">
+          <span class="lbl b">Before · 2023</span><span class="lbl a">After · 2026</span>
+          <div class="handle"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after" id="cmp-zatoka">
+        </div>
+        <h3>Aquapark Zatoka</h3><p>Same hotel, new site: layout, blocks and navigation redone in Elementor Pro, three languages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="more">
+    <h2>More work</h2>
+    <p class="sub">Smaller sites and older projects, all still live.</p>
+    <div class="more">
+      <a href="https://erudit-inclusion.es/" target="_blank" rel="noopener"><img src="img/erudit-es.jpg" alt="" loading="lazy"><div><b>Erudit Valencia</b><span>WordPress · Elementor · ES / RU / UK</span></div></a>
+      <a href="https://hot-chocolate.com.ua/" target="_blank" rel="noopener"><img src="img/hot-chocolate.jpg" alt="" loading="lazy"><div><b>Hot Chocolate hotel</b><span>Tilda · moved and redesigned</span></div></a>
+      <a href="https://aquakoblevo.net/" target="_blank" rel="noopener"><img src="img/aquakoblevo.jpg" alt="" loading="lazy"><div><b>Aquapark Koblevo</b><span>Tilda · booking widget · design + build</span></div></a>
+      <a href="https://nightingales.com.ua/" target="_blank" rel="noopener"><img src="img/nightingales.jpg" alt="" loading="lazy"><div><b>Nightingales Partners</b><span>Tilda · law firm · design + build</span></div></a>
+      <a href="https://garant-plus-service.com.ua/" target="_blank" rel="noopener"><img src="img/garant-plus.jpg" alt="" loading="lazy"><div><b>Garant Plus Service</b><span>Tilda · landing · AI-assisted copy</span></div></a>
+      <a href="https://panama-maritime-education.com/" target="_blank" rel="noopener"><img src="img/panama.jpg" alt="" loading="lazy"><div><b>Panama Maritime Education</b><span>WordPress · WPML · led development</span></div></a>
+      <a href="https://sky-apartments.com.ua/" target="_blank" rel="noopener"><img src="img/sky-apartments.jpg" alt="" loading="lazy"><div><b>Sky Apartments</b><span>WordPress · WPML · led development</span></div></a>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>What I can do for your business</h2>
+    <p class="sub">The things I have done for the sites above, not a wish list.</p>
+    <div class="services">
+      <div class="svc"><b>Website build or redesign</b><span>WordPress with Elementor, or Tilda. From a Figma design, a purchased theme, or my own layout.</span></div>
+      <div class="svc"><b>On-page SEO basics</b><span>Titles, meta, headings, images, page speed, Search Console, clean URLs.</span></div>
+      <div class="svc"><b>Google Business Profile</b><span>Setup and filling of your Google Maps listing: categories, photos, services, posts.</span></div>
+      <div class="svc"><b>Analytics</b><span>GA4, Google Tag Manager, conversion goals, Meta Pixel, call tracking.</span></div>
+      <div class="svc"><b>Forms to CRM</b><span>Lead forms that land in AmoCRM, Zoho or a spreadsheet automatically, via Make.</span></div>
+      <div class="svc"><b>Multilingual versions</b><span>WPML, Polylang, Tilda language copies. Up to seven languages on one site so far.</span></div>
+      <div class="svc"><b>Booking and widgets</b><span>Servio and similar booking modules, maps, chat and tracking scripts embedded by code.</span></div>
+      <div class="svc"><b>Hosting, domains, DNS</b><span>Buying, pointing and moving sites between hosts; SSL; staging before production.</span></div>
+      <div class="svc"><b>Updates and fixes</b><span>Content, layout and code changes in days, not weeks. Plugin and theme updates, speed checks.</span></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div>
+      <h2>About</h2>
+      <p>Ten years in digital marketing agencies in Odesa, Ukraine: project manager, then operations director. I managed developers, designers and marketers, and along the way learned to build the sites myself, because waiting a week for a developer to move a button was too long. Client edits went from about a week to one or two days.</p>
+      <p>I work in WordPress with Elementor and in Tilda, implement Figma designs, set up analytics and automations, and use Claude Code daily for HTML/CSS fixes, specs and routine checks. Master's degree in Computer Science (WES-evaluated). Moved to Toronto in 2026, open work permit.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <div class="tools">
+        <span class="tag">WordPress</span><span class="tag">Elementor Pro</span><span class="tag">Astra</span><span class="tag">WooCommerce</span><span class="tag">WPML</span><span class="tag">Polylang</span><span class="tag">Tilda</span><span class="tag">Zero Block</span><span class="tag">Webflow (edits)</span><span class="tag">Figma</span><span class="tag">HTML / CSS</span><span class="tag">GA4</span><span class="tag">GTM</span><span class="tag">Meta Pixel</span><span class="tag">Make</span><span class="tag">AmoCRM</span><span class="tag">Zoho CRM</span><span class="tag">Servio</span><span class="tag">FTP / DNS</span><span class="tag">Claude Code</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div><h2 style="margin:0 0 6px">Let's talk</h2><span style="color:var(--mute)">Toronto, ON · remote or hybrid · email preferred</span></div>
+    <div class="links"><a class="btn" href="mailto:EMAIL_PLACEHOLDER">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/valentyna-pakhomova" target="_blank" rel="noopener">LinkedIn</a></div>
+  </section>
+  <footer>© 2026 Valentyna Pakhomova</footer>
+</div>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* count-up */
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var target=+el.dataset.count,t0=null;
+    if(reduce){el.textContent=target+'+';return;}
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1100);k=1-Math.pow(1-k,3);el.textContent=Math.round(target*k)+(k===1?'+':'');if(k<1)requestAnimationFrame(step);}
+    setTimeout(function(){requestAnimationFrame(step);},350);
+  });
+
+  /* card sheen + tilt */
+  document.querySelectorAll('.proj').forEach(function(card){
+    card.addEventListener('pointermove',function(e){
+      var r=card.querySelector('.shot').getBoundingClientRect();
+      card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+      card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+      if(!reduce&&e.pointerType==='mouse'){var rx=((e.clientY-r.top)/r.height-.5)*-5,ry=((e.clientX-r.left)/r.width-.5)*6;card.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg)';}
+    });
+    card.addEventListener('pointerleave',function(){card.style.transform='';});
+  });
+
+  /* before/after sliders */
+  document.querySelectorAll('.cmp input').forEach(function(inp){
+    var box=inp.parentElement;
+    inp.addEventListener('input',function(){box.style.setProperty('--cut',inp.value+'%');});
+  });
+
+  /* hero canvas: layout blocks, drifting */
+  var cv=document.getElementById('grid'),ctx=cv.getContext('2d'),blocks=[],W=0,H=0,t=0,dpr=Math.min(2,window.devicePixelRatio||1);
+  function resize(){var r=cv.parentElement.getBoundingClientRect();W=cv.width=Math.floor((r.width+32)*dpr);H=cv.height=Math.floor((r.height+60)*dpr);seed();}
+  function seed(){blocks=[];var cols=Math.max(6,Math.floor(W/(140*dpr)));var cw=W/cols;for(var i=0;i<cols*5;i++){var c=i%cols,row=Math.floor(i/cols);blocks.push({x:c*cw+cw*.08,y:row*(H/5)+H*.03,w:cw*(.6+Math.random()*.3),h:(H/5)*(.45+Math.random()*.35),a:.04+Math.random()*.08,ph:Math.random()*6.28,sp:.3+Math.random()*.6});}}
+  function draw(){ctx.clearRect(0,0,W,H);var acc='#f2b341';var fade=ctx.createLinearGradient(0,0,W,0);fade.addColorStop(0,'rgba(0,0,0,0)');fade.addColorStop(.35,'rgba(0,0,0,0)');fade.addColorStop(1,'rgba(0,0,0,1)');
+    blocks.forEach(function(b){var pulse=.5+.5*Math.sin(t*b.sp+b.ph);var dy=Math.sin(t*.4+b.ph)*4*dpr;ctx.globalAlpha=b.a+pulse*.05;ctx.strokeStyle=acc;ctx.lineWidth=1*dpr;ctx.strokeRect(b.x,b.y+dy,b.w,b.h);if(pulse>.85){ctx.globalAlpha=.10;ctx.fillStyle=acc;ctx.fillRect(b.x,b.y+dy,b.w,b.h);}});
+    ctx.globalAlpha=1;ctx.globalCompositeOperation='destination-in';ctx.fillStyle=fade;ctx.fillRect(0,0,W,H);ctx.globalCompositeOperation='source-over';
+    t+=reduce?0:.012;if(!reduce)requestAnimationFrame(draw);}
+  if(!reduce){resize();window.addEventListener('resize',resize);draw();}
+})();
+</script>
+</body>
+</html>
